@@ -1,33 +1,49 @@
+// Array to hold potential answers
 let artists = ["Yunomi", "Stessie", "Honeycomebear", "Madeon", "Pikasonic"];      
 let guessedLetters = [];
 let guessingArtist = [];
-let usedArtists = [];
-let artistName;
-let numberofGuesses;
 let wins = 0;
 let pause = false; // This var and setTimout function to not listen for keypress while game resets
       
+let numberofGuesses;
+let artistName;
   function startYourGame() {
-  
+
+    // Generate a random number to pick a word from the array
     artistName = artists[Math.floor(Math.random() * artists.length)].toUpperCase();
+
     if (artistName.length <= 6) {
+
       numberofGuesses = 8
+
     } else if (artistName.length > 6 && artistName.length <= 9) {
+
       numberofGuesses = 10
+
     } else if (artistName.length > 9) {
+
       numberofGuesses = 10
+
     } 
   
     for (var i=0; i < artistName.length; i++) {
+
       if (artistName[i] === " ") {
+
         guessingArtist.push(" ")
+
       } 
       else {
+
         guessingArtist.push("_");
+
       }
+      
     }
     updateDisplay();
   }
+
+let usedArtists = [];
       
   function resetGame() {
     if (usedArtists.length === artists.length) {
@@ -54,6 +70,8 @@ let pause = false; // This var and setTimout function to not listen for keypress
           numberofGuesses = 15
         } 
   
+      guessedLetters = [];
+      guessingArtist = [];
   
       for (var i=0; i < artistName.length; i++) {
 
@@ -68,9 +86,6 @@ let pause = false; // This var and setTimout function to not listen for keypress
 
         }
       }
-
-      guessedLetters = [];
-      guessingArtist = [];
       updateDisplay();
     }
   };
