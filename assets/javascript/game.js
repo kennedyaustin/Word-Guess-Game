@@ -3,7 +3,7 @@ $(document).ready(function() {
     let artists = ["Yunomi", "Stessie", "Honeycomebear", "Madeon", "Pikasonic"];
     let guessedLetters = [];
     let guessingArtist = [];
-    let wordtoMatch
+    let artistName
     let numberofGuesses
     let wins = 0;
     let winSound1= new Audio("../music/HoneyComeBear - Dear.mp3")
@@ -20,7 +20,16 @@ $(document).ready(function() {
             numberofGuesses= 15;
         }
 
+        for (var i = 0; i < artistName.length; i++) {
 
+            if (artistName[i] === " ") {
+                guessingArtist.push(" ");
+            } else {
+                guessingArtist.push(" ");
+            }
+        }
+
+        updateDisplay();
 
     }
 
