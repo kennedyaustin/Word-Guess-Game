@@ -1,3 +1,52 @@
 body {
-    
+    background-color: black;
+}
+
+h1 {
+    /* https://www.youtube.com/watch?v=pl2tpB9VUcE */
+    font-size: 150px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700px;
+    background: url(../images/Background.jpg) 50% 50%;
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+
+}
+
+h3 {
+    font-family: 'Luckiest Guy', cursive;
+    text-align: center;
+    background: url(../images/Background.jpg) 50% 50%;
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    padding-bottom: 30px;
+}
+
+#maincontent {
+    /* border: 2px dotted white; */
+    height: auto;
+}
+
+.blank {
+    border: 2px solid white;
+}
+
+#game {
+    border: 2px dotted white;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+}
+
+#picture {
+    border: 2px dotted white;
+    padding-top: 15px;
+    padding-bottom: 20px;
 }
