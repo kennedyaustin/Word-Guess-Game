@@ -170,6 +170,7 @@ let stopinput = false;
     }
   };
 
+  //https://code-projects.org/word-guess-game-in-javascript-with-source-code/
   var LetterofArtist = function(inputletters){
 
     // This function will show the input that the user keys in and the inputletters
