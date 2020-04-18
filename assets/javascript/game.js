@@ -3,6 +3,12 @@ let artists = ["Yunomi", "Stessie", "Honeycomebear", "Madeon", "Pikasonic"];
 let guessingArtist = [];  
 let numberofGuesses;
 let artistName;
+let winsound1 = new Audio("./assets/music/Honeycomebear.mp3")
+let winsound2 = new Audio("./assets/music/Madeon.mp3")
+let winsound3 = new Audio("./assets/music/Pikasonic.mp3")
+let winsound4 = new Audio("./assets/music/Stessie.mp3")
+let winsound5 = new Audio("./assets/music/Yunomi.mp3")
+
   function startYourGame() {
 
     // Generate a random number to pick a word from the array
@@ -127,7 +133,7 @@ let stopinput = false;
     && (ch >= "a" && ch <= "z" || ch >= "A" && ch <= "Z");
 
   };
-  
+
   // This function will be checking whether the letters that the user types 
   // are correct or not
   function checkingForLetters(letterPressed) {
