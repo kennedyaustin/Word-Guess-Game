@@ -81,7 +81,7 @@ let wins = 0;
             usedArtists.push(artistName)
             stopinput = true;
             updateDisplay();
-            setTimeout(resetGame, 1000);
+            setTimeout(resetGame, 2000);
 
         }
       }
@@ -89,7 +89,7 @@ let wins = 0;
 
   // This is how the remaining guesses number will decrease
   // if the user guesses the wrong letter in the artist name
-  if (foundLetter === false) {
+  if (!foundLetter) {
 
     if (guessedLetters.includes(letterPressed) === false) {
 
@@ -107,7 +107,7 @@ let wins = 0;
       usedArtists.push(artistName);
       guessingArtist = artistName.split();
       stopinput = true;
-      setTimeout(resetGame, 1000);
+      setTimeout(resetGame, 2000);
 
     }
   }
@@ -125,7 +125,7 @@ let stopinput = false;
     if (usedArtists.length === artists.length) {
       
       usedArtists = []
-      setTimeout(resetGame, 1000); 
+      setTimeout(resetGame, 2000); 
 
     } else {
       
@@ -169,21 +169,28 @@ let stopinput = false;
       updateDisplay();
     }
   };
-      
-  document.onkeydown = function(event) {
-    
-    if (isLetter(event.key) && stopinput === false) {
 
-      checkingForLetters(event.key.toUpperCase());
+  var LetterofArtist = function(inputletters){
+
+    // This function will show the input that the user keys in and the inputletters
+    // makes it so that only letters will be able to be used as input
+    // the string lets the user type in letters while .length makes it so the user
+    // can only press keys that are 1 character in length
+    return typeof inputletters === "string" && inputletters.length === 1
+
+    // This gives the range of characters that the user can type, so if they have caps
+    // lock on, their input will still be recorded
+    && (inputletters >= "a" && inputletters <= "z" || inputletters >= "A" && inputletters <= "Z");
+
+  };
+      
+  document.onkeydown = function(keypresseddown) {
+    
+    if (LetterofArtist(keypresseddown.key) && stopinput === false) {
+
+      checkingForLetters(keypresseddown.key.toUpperCase());
 
     }
   }
-      
-  var isLetter = function(ch){
-
-    return typeof ch === "string" && ch.length === 1
-    && (ch >= "a" && ch <= "z" || ch >= "A" && ch <= "Z");
-
-  };
       
   startYourGame();
