@@ -1,13 +1,8 @@
 // Array to hold potential answers
 let artists = ["Yunomi", "Stessie", "Honeycomebear", "Madeon", "Pikasonic"];      
 let guessingArtist = [];  
-let numberofGuesses;
-let artistName;
-let winsound1 = new Audio("./assets/music/Honeycomebear.mp3")
-let winsound2 = new Audio("./assets/music/Madeon.mp3")
-let winsound3 = new Audio("./assets/music/Pikasonic.mp3")
-let winsound4 = new Audio("./assets/music/Stessie.mp3")
-let winsound5 = new Audio("./assets/music/Yunomi.mp3")
+let numberofGuesses = 0
+let artistName = ''
 
   function startYourGame() {
 
@@ -61,6 +56,63 @@ let wins = 0;
     document.getElementById("guessedLetters").innerText =  guessedLetters.join(" ");
   
   };
+
+  // This function will be checking whether the letters that the user types 
+  // are correct or not
+  function checkingForLetters(letterPressed) {
+
+    // This variable defines the letters that the user will be putting in 
+    var foundLetter = false;
+      
+    for (var i=0; i < artistName.length; i++) {
+
+      // If the letter that's pressed is part of one artists name,
+      if (letterPressed === artistName[i]) {
+
+        // the letter will take the place of the " "/ "_" spots under Current Word
+        guessingArtist[i] = letterPressed
+        foundLetter = true
+
+        // If the letters that are in the guessingArtist array match the name inside of the
+        // artistName array then the user has guessed the artist correctly
+        if (guessingArtist.join("") === artistName) {
+
+            wins++
+            usedArtists.push(artistName)
+            stopinput = true;
+            updateDisplay();
+            setTimeout(resetGame, 1000);
+
+        }
+      }
+    }
+
+  // This is how the remaining guesses number will decrease
+  // if the user guesses the wrong letter in the artist name
+  if (foundLetter === false) {
+
+    if (guessedLetters.includes(letterPressed) === false) {
+
+      // The letters that are input by the user will replace the empty array of guessedLetters
+      guessedLetters.push(letterPressed)
+      numberofGuesses--
+
+    }
+
+    // If the user runs out of guesses the page will show the name of the artist before
+    // moving onto the next hangman puzzle
+    if (numberofGuesses === 0) {
+        
+      // The artist name that wasn't guessed correctly will be put into the empty array usedArtists
+      usedArtists.push(artistName);
+      guessingArtist = artistName.split();
+      stopinput = true;
+      setTimeout(resetGame, 1000);
+
+    }
+  }
+  updateDisplay();
+};
 
 let usedArtists = [];
 let stopinput = false;
@@ -132,63 +184,6 @@ let stopinput = false;
     return typeof ch === "string" && ch.length === 1
     && (ch >= "a" && ch <= "z" || ch >= "A" && ch <= "Z");
 
-  };
-
-  // This function will be checking whether the letters that the user types 
-  // are correct or not
-  function checkingForLetters(letterPressed) {
-
-    // This variable defines the letters that the user will be putting in 
-    var foundLetter = false;
-      
-    for (var i=0; i < artistName.length; i++) {
-
-      // If the letter that's pressed is part of one artists name,
-      if (letterPressed === artistName[i]) {
-
-        // the letter will take the place of the " "/ "_" spots under Current Word
-        guessingArtist[i] = letterPressed
-        foundLetter = true
-
-        // If the letters that are in the guessingArtist array match the name inside of the
-        // artistName array then the user has guessed the artist correctly
-        if (guessingArtist.join("") === artistName) {
-
-              wins++
-              usedArtists.push(artistName)
-              stopinput = true;
-              updateDisplay();
-              setTimeout(resetGame, 1000);
-
-        }
-      }
-    }
-
-    // This is how the remaining guesses number will decrease
-    // if the user guesses the wrong letter in the artist name
-    if (foundLetter === false) {
-
-      if (guessedLetters.includes(letterPressed) === false) {
-
-            // The letters that are input by the user will replace the empty array of guessedLetters
-            guessedLetters.push(letterPressed)
-            numberofGuesses--
-
-      }
-
-      // If the user runs out of guesses the page will show the name of the artist before
-      // moving onto the next hangman puzzle
-      if (numberofGuesses === 0) {
-        
-        // The artist name that wasn't guessed correctly will be put into the empty array usedArtists
-        usedArtists.push(artistName);
-        guessingArtist = artistName.split();
-        stopinput = true;
-        setTimeout(resetGame, 1000);
-
-      }
-    }
-        updateDisplay();
   };
       
   startYourGame();
