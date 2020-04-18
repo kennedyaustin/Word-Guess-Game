@@ -150,7 +150,6 @@ let stopinput = false;
 
               wins++
               usedArtists.push(artistName)
-              console.log(usedArtists)
               stopinput = true;
               updateDisplay();
               setTimeout(resetGame, 1000);
@@ -159,19 +158,24 @@ let stopinput = false;
       }
     }
 
+    // This is how the remaining guesses number will decrease
+    // if the user guesses the wrong letter in the artist name
     if (foundLetter === false) {
 
       if (guessedLetters.includes(letterPressed) === false) {
-         
+
+            // The letters that are input by the user will replace the empty array of guessedLetters
             guessedLetters.push(letterPressed)
             numberofGuesses--
 
       }
 
+      // If the user runs out of guesses the page will show the name of the artist before
+      // moving onto the next hangman puzzle
       if (numberofGuesses === 0) {
-         
+        
+        // The artist name that wasn't guessed correctly will be put into the empty array usedArtists
         usedArtists.push(artistName);
-        console.log(usedArtists)
         guessingArtist = artistName.split();
         stopinput = true;
         setTimeout(resetGame, 1000);
