@@ -12,17 +12,17 @@ In this project CSS, HTML, and Javascript were all used in order to create a wor
 ![](WordGameSS/Start.png) <br><br> 
 
 ● When the user presses a key it will either be added to the blank spaces if it is correct, or down below in the Letters Guessed section. <br> 
-● Incorrect: <br><br>
+  - Incorrect: <br><br>
 ![](WordGameSS/WrongGuess.png) <br><br>
 
-● Correct: <br><br>
+  - Correct: <br><br>
 ![](WordGameSS/CorrectGuess.png) <br><br>
 
 ● If the user guesses all of the letters that are in the word correctly their win counter will increase by one, whereas if they lose the word that they were guessing will be shown for a moment before moving onto the next word. <br>
-● Win: <br><br>
+  - Win: <br><br>
 ![](WordGameSS/Win.png) <br><br>
 
-● Loss: <br><br>
+  - Loss: <br><br>
 ![](WordGameSS/Loss.png) <br><br>
 
 # Additional Information
