@@ -29,4 +29,4 @@ In this project CSS, HTML, and Javascript were all used in order to create a wor
 
 ● The JS is coded to only take in letters a-z and A-Z, just in case caps lock is accidentally pressed. Shift and Enter are also choices that the user cannot use as input, so pressing these will not result in the loss of another guess. <br>
 ● The letters that are in the letters guessed section will only decrease your total number of guesses by one, meaning that if you press the same letter again by accident you will not be penalized.
-(wins don't stop counting up)
+● The JS code currently will not limit the number of wins that the user can achieve, and there is only a small pool of unknown words to be guessed.
