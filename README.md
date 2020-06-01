@@ -18,9 +18,9 @@ In this project CSS, HTML, and Javascript were all used in order to create a wor
 ● Correct: <br><br>
 ![](WordGameSS/CorrectGuess.png) <br><br>
 
-● If the user guesses all of the letters that are in the word correctly their win counter will increase by one, whereas if they lose the word that they were guessing will be shown for a moment before moving onto the next word. <br>(wins don't stop counting up)
+● If the user guesses all of the letters that are in the word correctly their win counter will increase by one, whereas if they lose the word that they were guessing will be shown for a moment before moving onto the next word. <br>
 ● Win: <br><br>
-![](WordGameSS/Wins.png) <br><br>
+![](WordGameSS/Win.png) <br><br>
 
 ● Loss: <br><br>
 ![](WordGameSS/Loss.png) <br><br>
@@ -29,3 +29,4 @@ In this project CSS, HTML, and Javascript were all used in order to create a wor
 
 ● The JS is coded to only take in letters a-z and A-Z, just in case caps lock is accidentally pressed. Shift and Enter are also choices that the user cannot use as input, so pressing these will not result in the loss of another guess. <br>
 ● The letters that are in the letters guessed section will only decrease your total number of guesses by one, meaning that if you press the same letter again by accident you will not be penalized.
+(wins don't stop counting up)
