@@ -9,21 +9,21 @@ In this project CSS, HTML, and Javascript were all used in order to create a wor
 # How to Play
 
 ● The user will open up the page to see a screen with a certain number of blank spaces as well as text telling them to press on any key to begin. <br><br>
-![](WordGameSS/Start.png) <br><br> 
+![](WordGameSS/Start.png) <br>
 
 ● When the user presses a key it will either be added to the blank spaces if it is correct, or down below in the Letters Guessed section. <br> 
   - Incorrect: <br><br>
-![](WordGameSS/WrongGuess.png) <br><br>
+![](WordGameSS/WrongGuess.png) <br>
 
   - Correct: <br><br>
-![](WordGameSS/CorrectGuess.png) <br><br>
+![](WordGameSS/CorrectGuess.png) <br>
 
 ● If the user guesses all of the letters that are in the word correctly their win counter will increase by one, whereas if they lose the word that they were guessing will be shown for a moment before moving onto the next word. <br>
   - Win: <br><br>
-![](WordGameSS/Win.png) <br><br>
+![](WordGameSS/Win.png) <br>
 
   - Loss: <br><br>
-![](WordGameSS/Loss.png) <br><br>
+![](WordGameSS/Loss.png) <br>
 
 # Additional Information
 
