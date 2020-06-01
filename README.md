@@ -8,5 +8,7 @@ In this project CSS, HTML, and Javascript were all used in order to create a wor
 
 # How to Play
 
-● The user will open up the page to see a screen with a certain number of blank spaces and text telling them to press on any key to begin.<br>
-![](WordGameSS/Start.png)
+● The user will open up the page to see a screen with a certain number of blank spaces as well as text telling them to press on any key to begin. <br><br>
+![](WordGameSS/Start.png) <br><br> 
+
+● The JS is coded to only take in letters a-z and A-Z, just in case caps lock is accidentally pressed. Shift and Enter are also choices that the user cannot use as input, so pressing these will not result in the loss of another 
